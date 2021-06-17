@@ -1,4 +1,5 @@
 # findyourjab 
+### First attempt to make a discord bot
 ![Logo of the bot](https://github.com/Priya2410/findyourjab/blob/main/Images/logo.gif)
 ## Helps you find vaccines for Bengaluru city for the age>18
 ### The user is asked if she/he wants to see vaccination centers for 
@@ -15,3 +16,18 @@
 - The capacity for dose 1 is displayed
 - The capacity for dose 2 is displayed
 - The timings for slots are displayed
+### To run the code
+```
+python3 main.py
+```
+### Install the dependencies
+```
+pip install -r requirements.txt
+```
+### Replace the following things in the code 
+```
+client.run('Add in your discord token')
+```
+```
+general= client.get_channel('Add your channel id')
+```
