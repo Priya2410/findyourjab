@@ -7,6 +7,7 @@ from datetime import date
 
 #importing cowin 
 from cowin_api import api
+from discord.errors import ClientException
 cowin = api.CoWinAPI()
 
 #This is only for Karnataka and its districs
@@ -30,7 +31,7 @@ client = discord.Client()
 # registers an event for client - discord bot
 @client.event
 async def on_connect():
-    general= client.get_channel() #    general= client.get_channel(Enter your discord channel id here)
+    general= client.get_channel(854725061314347041) #    general= client.get_channel(Enter your discord channel id here)
     embed=discord.Embed(
         title="Hello welcome to "+client.user.name,
         description="Here are some guidelines to start with the bot",
@@ -43,7 +44,8 @@ async def on_connect():
 
 @client.event
 async def display(my_dis):
-    general= client.get_channel()     #general= client.get_channel(Enter your discord channel id here)
+    general=client.get_channel(854725061314347041)
+    #general= client.get_channel(Enter your discord channel id here)
     if(my_dis!=-1):
         vaccine=cowin.get_availability_by_district(str(my_dis),today_date)
         for i in vaccine['centers']:
@@ -87,18 +89,19 @@ async def display(my_dis):
 @client.event
 async def on_message(message):
     if(message.content!=""):
-        if(message.content=="BR" or message.content=="br"):
+        if(message.content=="BR" or message.content=="br" or message.content=="Br" or message.content=="bR"):
             my_district=bangalore_rural
             await display(my_district)
-        elif(message.content=="BU" or message.content=="bu"):
+        elif(message.content=="BU" or message.content=="bu" or message.content=="bU" or message.content=="Bu"):
             my_district=bangalore_urban
             await display(my_district)
-        elif(message.content=="BBMP" or message.content=="bbmp"):
+        elif(message.content=="BBMP" or message.content=="bbmp" or message.content=="Bbmp"):
             my_district=bbmp
             await display(my_district)
         else:
             my_district=-1
-            await display(my_district)
+            await on_connect()
+            # await display(my_district)
 
 # To run client on the server
-client.run('enter your discord token here')
+client.run('ODU0NzIxNTMzNjU4NTI5ODIy.YMoDdQ.nGyp_56HSrhk7tRh3Bc1_c9_c3E')
