@@ -87,18 +87,18 @@ async def display(my_dis):
 @client.event
 async def on_message(message):
     if(message.content!=""):
-        if(message.content=="BR" or message.content=="br"):
+        if(message.content=="BR" or message.content=="br" or message.content=="Br" or message.content=="bR"):
             my_district=bangalore_rural
             await display(my_district)
-        elif(message.content=="BU" or message.content=="bu"):
+        elif(message.content=="BU" or message.content=="bu" or message.content=="bU" or message.content=="Bu"):
             my_district=bangalore_urban
             await display(my_district)
-        elif(message.content=="BBMP" or message.content=="bbmp"):
+        elif(message.content=="BBMP" or message.content=="bbmp" or message.content=="Bbmp"):
             my_district=bbmp
             await display(my_district)
         else:
             my_district=-1
-            await display(my_district)
+            await on_connect()
 
 # To run client on the server
 client.run('enter your discord token here')
