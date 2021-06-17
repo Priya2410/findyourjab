@@ -1,6 +1,5 @@
 # findyourjab 
 ### First attempt to make a discord bot
-![Logo of the bot](https://github.com/Priya2410/findyourjab/blob/main/Images/logo.gif)
 ## Helps you find vaccines for Bengaluru city for the age>18
 ### The user is asked if she/he wants to see vaccination centers for 
 ![Example of asking the user](https://github.com/Priya2410/findyourjab/blob/main/Images/users.JPG)
@@ -31,3 +30,5 @@ client.run('Add in your discord token')
 ```
 general= client.get_channel('Add your channel id')
 ```
+### Video Link : //Click on the image to view the video
+[![Watch the video](https://github.com/Priya2410/findyourjab/blob/main/Images/logo.gif)](https://www.youtube.com/watch?v=qUu-NXCbyfw)
