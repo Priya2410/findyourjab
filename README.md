@@ -1,4 +1,5 @@
 # findyourjab 
+### DISCORD SERVER LINK : https://discord.gg/y727RWPj
 ### First attempt to make a discord bot
 ## Helps you find vaccines for Bengaluru city for the age>18
 ### The user is asked if she/he wants to see vaccination centers for 
