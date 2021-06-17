@@ -24,14 +24,13 @@ date_new=date_new[::-1]
 today_date= "-"
 today_date = today_date.join(date_new)
 my_district=int()
-
 #client
 client = discord.Client()
 
 # registers an event for client - discord bot
 @client.event
 async def on_connect():
-    general= client.get_channel(854725061314347041) #    general= client.get_channel(Enter your discord channel id here)
+    general=client.get_channel() #    general= client.get_channel(Enter your discord channel id here)
     embed=discord.Embed(
         title="Hello welcome to "+client.user.name,
         description="Here are some guidelines to start with the bot",
@@ -44,7 +43,8 @@ async def on_connect():
 
 @client.event
 async def display(my_dis):
-    general=client.get_channel(854725061314347041)
+    count=0
+    general=client.get_channel()
     #general= client.get_channel(Enter your discord channel id here)
     if(my_dis!=-1):
         vaccine=cowin.get_availability_by_district(str(my_dis),today_date)
@@ -76,6 +76,15 @@ async def display(my_dis):
                             string = string + sl + "\n"
                         embed.add_field(name="**Slots**",value=string,inline=False)
                         await general.send(embed=embed)
+                    else:
+                        count=count+1
+                        if(count==1 and j['available_capacity']==0):
+                            embed=discord.Embed(
+                                    title="No vaccine available",
+                                    color=discord.Color.red()
+                            )
+                            await general.send(embed=embed)
+
     else:
         embed=discord.Embed(
                 title="Warning",
@@ -101,13 +110,6 @@ async def on_message(message):
         else:
             my_district=-1
             await on_connect()
-<<<<<<< HEAD
-            # await display(my_district)
 
 # To run client on the server
-client.run('ODU0NzIxNTMzNjU4NTI5ODIy.YMoDdQ.nGyp_56HSrhk7tRh3Bc1_c9_c3E')
-=======
-
-# To run client on the server
-client.run('enter your discord token here')
->>>>>>> e0f9cdd630f2bffa105969b9ca7ea8280a383e28
+client.run('your token')
