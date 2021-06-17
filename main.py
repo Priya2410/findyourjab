@@ -101,7 +101,13 @@ async def on_message(message):
         else:
             my_district=-1
             await on_connect()
+<<<<<<< HEAD
             # await display(my_district)
 
 # To run client on the server
 client.run('ODU0NzIxNTMzNjU4NTI5ODIy.YMoDdQ.nGyp_56HSrhk7tRh3Bc1_c9_c3E')
+=======
+
+# To run client on the server
+client.run('enter your discord token here')
+>>>>>>> e0f9cdd630f2bffa105969b9ca7ea8280a383e28
