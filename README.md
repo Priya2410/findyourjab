@@ -8,3 +8,10 @@
   - BBMP 
 ### Sample output 
 ![Sample Output](https://github.com/Priya2410/findyourjab/blob/main/Images/Sample.JPG)
+- The vaccine address is displayed
+- The vaccine date is displayed
+- The vaccine fee is displayed
+- The vaccine age limit is displayed
+- The capacity for dose 1 is displayed
+- The capacity for dose 2 is displayed
+- The timings for slots are displayed
